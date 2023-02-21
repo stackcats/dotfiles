@@ -1,0 +1,48 @@
+#+PROPERTY: :mkdirp yes
+#+auto_tangle: t
+
+* Install
+
+#+begin_src sh
+stow -D . && stow . && echo "done!"
+#+end_src
+
+#+RESULTS:
+: done!
+
+* Dotfile Configuration
+
+** Stow
+#+begin_src shell :tangle .stow-local-ignore
+  \.git
+  \.gitignore
+  \.DS_Store
+  Dotfile\.org
+  README\.md
+#+end_src
+
+** Golang
+
+*** asdf
+
+#+begin_src shell :tangle .default-golang-pkgs
+  golang.org/x/tools/cmd/goimports
+  golang.org/x/tools/gopls
+  honnef.co/go/tools/cmd/staticcheck
+#+end_src
+
+** Rust
+
+*** rustfmt
+
+#+begin_src shell :tangle .rustfmt.toml
+edition = "2021"
+#+end_src
+
+*** cargo
+
+#+begin_src shell :tangle .cargo/config
+[net]
+git-fetch-with-cli = true
+#+end_src
+
