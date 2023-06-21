@@ -8,7 +8,8 @@ stow -D . && stow . && echo "done!"
 #+end_src
 
 #+RESULTS:
-: done!
+
+
 
 * Dotfile Configuration
 
@@ -17,8 +18,16 @@ stow -D . && stow . && echo "done!"
   \.git
   \.gitignore
   \.DS_Store
-  Dotfile\.org
-  README\.md
+  Dotfile.org
+  README.md
+#+end_src
+
+** Clojure
+
+*** zprintc
+
+#+begin_src shell :tangle .zprintrc
+{:style :indent-only}
 #+end_src
 
 ** Golang
