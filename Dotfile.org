@@ -40,6 +40,11 @@ stow -D . && stow . && echo "done!"
   honnef.co/go/tools/cmd/staticcheck
 #+end_src
 
+** Python
+*** asdf
+#+begin_src shell :tangle .default-python-packages
+sqlparse
+#+end_src
 ** Rust
 
 *** rustfmt
