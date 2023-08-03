@@ -43,7 +43,8 @@ stow -D . && stow . && echo "done!"
 ** Python
 *** asdf
 #+begin_src shell :tangle .default-python-packages
-sqlparse
+  sqlparse
+  mypy
 #+end_src
 ** Rust
 
