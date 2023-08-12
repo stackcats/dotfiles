@@ -4,7 +4,7 @@
 * Install
 
 #+begin_src sh
-stow -D . && stow . && echo "done!"
+  stow -D . && stow . && echo "done!"
 #+end_src
 
 #+RESULTS:
@@ -27,7 +27,7 @@ stow -D . && stow . && echo "done!"
 *** zprintc
 
 #+begin_src shell :tangle .zprintrc
-{:style :indent-only}
+  {:style :indent-only}
 #+end_src
 
 ** Golang
@@ -39,7 +39,11 @@ stow -D . && stow . && echo "done!"
   golang.org/x/tools/gopls
   honnef.co/go/tools/cmd/staticcheck
 #+end_src
-
+** Javascript
+*** asdf
+#+begin_src shell :tangle .default-npm-packages
+  prettier
+#+end_src
 ** Python
 *** asdf
 #+begin_src shell :tangle .default-python-packages
@@ -51,13 +55,13 @@ stow -D . && stow . && echo "done!"
 *** rustfmt
 
 #+begin_src shell :tangle .rustfmt.toml
-edition = "2021"
+  edition = "2021"
 #+end_src
 
 *** cargo
 
 #+begin_src shell :tangle .cargo/config
-[net]
-git-fetch-with-cli = true
+  [net]
+  git-fetch-with-cli = true
 #+end_src
 
