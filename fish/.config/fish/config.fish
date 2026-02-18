@@ -1,4 +1,7 @@
 if status is-interactive
+    if not set -q TMUX
+        tmux attach -t main 2>/dev/null; or tmux new -s main
+    end
 end
 
 abbr vi "nvim"
