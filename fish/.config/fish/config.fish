@@ -4,10 +4,18 @@ end
 abbr vi "nvim"
 abbr gst "git status"
 
-fish_add_path ~/.asdf/shims
-fish_add_path ~/.cargo/bin
+if type -q asdf
+    fish_add_path ~/.asdf/shims
+end
 
-# opam
-source /home/john/.opam/opam-init/init.fish > /dev/null 2> /dev/null;
+if type -q cargo
+    fish_add_path ~/.cargo/bin
+end
 
-starship init fish | source
+if type -q opam
+    source /home/john/.opam/opam-init/init.fish > /dev/null 2> /dev/null;
+end
+
+if type -q starship
+    starship init fish | source
+end
