@@ -24,6 +24,7 @@ return {
         "typos_lsp",
         "ocamllsp",
         "kotlin_lsp",
+        "hls",
       },
     })
 

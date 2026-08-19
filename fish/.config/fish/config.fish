@@ -22,3 +22,9 @@ end
 if type -q starship
     starship init fish | source
 end
+
+# GHCup
+if test -d "$HOME/.ghcup/bin"
+    fish_add_path --path "$HOME/.ghcup/bin"
+    fish_add_path --path "$HOME/.cabal/bin"
+end
