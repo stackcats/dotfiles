@@ -18,6 +18,24 @@ else
   opt.clipboard = "unnamedplus"
 end
 
+-- fix paste content with mouse with ^M at the end of lines
+if vim.fn.has("wsl") == 1 then
+  local cmd = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'
+
+  vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+      ["+"] = "clip.exe",
+      ["*"] = "clip.exe",
+    },
+    paste = {
+      ["+"] = cmd,
+      ["*"] = cmd,
+    },
+    cache_enabled = 0,
+  }
+end
+
 if vim.g.neovide then
   vim.o.guifont = "FiraCode Nerd Font:h16"
 end
