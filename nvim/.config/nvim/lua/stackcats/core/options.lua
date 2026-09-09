@@ -18,22 +18,27 @@ else
   opt.clipboard = "unnamedplus"
 end
 
--- fix paste content with mouse with ^M at the end of lines
-if vim.fn.has("wsl") == 1 then
-  local cmd = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))'
+local is_wsl = (vim.fn.has("wsl") == 1)
 
-  vim.g.clipboard = {
-    name = "WslClipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = cmd,
-      ["*"] = cmd,
-    },
-    cache_enabled = 0,
-  }
+local function has(cmd)
+  return vim.fn.executable(cmd) == 1
+end
+
+if is_wsl then
+  if has("xclip") then
+    vim.g.clipboard = {
+      name = "xclip",
+      copy = {
+        ["+"] = { "xclip", "-selection", "clipboard" },
+        ["*"] = { "xclip", "-selection", "primary" },
+      },
+      paste = {
+        ["+"] = { "sh", "-c", "xclip -selection clipboard -o | tr -d '\\r'" },
+        ["*"] = { "sh", "-c", "xclip -selection primary -o | tr -d '\\r'" },
+      },
+      cache_enabled = 0,
+    }
+  end
 end
 
 if vim.g.neovide then
