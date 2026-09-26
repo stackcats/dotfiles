@@ -11,15 +11,12 @@ return {
         delay = 25,
         reveal = { "close" },
       },
+      themable = true,
     },
   },
   config = function(_, opts)
     vim.opt.mousemoveevent = true
     vim.opt.termguicolors = true
-
-    if (vim.g.colors_name or ""):find("catppuccin") then
-      opts.highlights = require("catppuccin.groups.integrations.bufferline").get()
-    end
 
     require("bufferline").setup(opts)
   end,

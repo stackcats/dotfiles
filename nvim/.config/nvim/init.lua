@@ -12,4 +12,4 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme tokyonight-moon")

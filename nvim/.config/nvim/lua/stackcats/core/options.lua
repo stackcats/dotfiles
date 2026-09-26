@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 opt.autoindent = true
-opt.cursorline = true
+-- opt.cursorline = true
 opt.encoding = "utf-8"
 opt.fileencodings = "utf-8"
 opt.fileformat = "unix"

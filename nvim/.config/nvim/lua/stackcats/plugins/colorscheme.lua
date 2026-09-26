@@ -17,26 +17,13 @@ return {
       })
     end,
   },
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        custom_highlights = function(colors)
-          return {
-            -- for snacks picker
-            NormalFloat = { bg = colors.base, fg = colors.text },
-          }
-        end,
-      })
-    end,
-  },
   { "rose-pine/neovim", name = "rose-pine", priority = 1000 },
   {
-    "neanias/everforest-nvim",
-    version = false,
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
+    opts = {
+      transparent = true,
+    },
   },
 }
