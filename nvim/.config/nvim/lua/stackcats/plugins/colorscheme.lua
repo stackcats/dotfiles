@@ -24,6 +24,10 @@ return {
     priority = 1000,
     opts = {
       style = "storm",
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
       transparent = true,
       on_highlights = function(hl, c)
         -- winbar highlights

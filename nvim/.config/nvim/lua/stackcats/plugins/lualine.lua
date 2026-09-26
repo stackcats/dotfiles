@@ -79,7 +79,7 @@ function setup(palette)
     function()
       return "▊"
     end,
-    color = { fg = colors.blue }, -- Sets highlighting of component
+    color = { fg = colors.orange }, -- Sets highlighting of component
     padding = { left = 0, right = 1 }, -- We don't need space before this
   })
 
@@ -94,7 +94,6 @@ function setup(palette)
         n = colors.red,
         i = colors.green,
         v = colors.blue,
-        [""] = colors.blue,
         V = colors.blue,
         c = colors.magenta,
         no = colors.red,
@@ -210,7 +209,7 @@ function setup(palette)
     function()
       return "▊"
     end,
-    color = { fg = colors.blue },
+    color = { fg = colors.orange },
     padding = { left = 1 },
   })
 

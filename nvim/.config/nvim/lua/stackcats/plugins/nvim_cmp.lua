@@ -28,7 +28,7 @@ return {
 
     -- Configure the completion window
     local cmp_window = cmp.config.window.bordered({
-      border = "single",
+      border = "rounded",
       winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:IncSearch",
     })
 
@@ -98,7 +98,6 @@ return {
         }),
       },
     })
-
     cmp.setup.filetype("oil", {
       sources = cmp.config.sources({
         { name = "path" },

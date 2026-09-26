@@ -20,6 +20,9 @@ return {
       keymaps = {
         ["gO"] = "actions.copy_entry_filename",
       },
+      confirmation = {
+        border = "rounded",
+      },
     },
     config = function(_, opts)
       require("oil").setup(opts)
