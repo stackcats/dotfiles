@@ -20,11 +20,6 @@ return {
 
     require("flutter-tools").setup({
       lsp = {
-        color = {
-          enabled = true,
-          background = true,
-          virtual_text = false,
-        },
         on_init = custom.on_init,
         on_attach = function()
           custom.attach()
