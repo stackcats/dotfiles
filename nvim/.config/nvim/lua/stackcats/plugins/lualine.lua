@@ -4,7 +4,7 @@ function setup(palette)
   -- Color table for highlights
   local colors = {
     bg = palette.bg0,
-    fg = palette.fg,
+    fg = palette.fg0,
     yellow = palette.yellow,
     cyan = palette.aqua,
     darkblue = palette.bg_dim,

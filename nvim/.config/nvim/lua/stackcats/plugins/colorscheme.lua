@@ -23,7 +23,13 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
+      style = "storm",
       transparent = true,
+      on_highlights = function(hl, c)
+        -- winbar highlights
+        hl.WinBar = { bg = "none", fg = c.blue, bold = true }
+        hl.WinBarNC = { bg = "none", fg = c.comment }
+      end,
     },
   },
 }
