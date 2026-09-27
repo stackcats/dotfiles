@@ -1,24 +1,5 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,
-    config = function()
-      require("kanagawa").setup({
-        colors = {
-          theme = {
-            all = {
-              ui = {
-                bg_gutter = "none",
-              },
-            },
-          },
-        },
-        -- transparent = true,
-      })
-    end,
-  },
-  { "rose-pine/neovim", name = "rose-pine", priority = 1000 },
-  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
@@ -33,6 +14,9 @@ return {
         -- winbar highlights
         hl.WinBar = { bg = "none", fg = c.blue, bold = true }
         hl.WinBarNC = { bg = "none", fg = c.comment }
+
+        -- nvim-lsp-endhints
+        hl.LspInlayHint = { bg = "none", fg = c.comment }
       end,
     },
   },

@@ -25,6 +25,7 @@ return {
     },
 
     "saadparwaiz1/cmp_luasnip",
+    "saecki/crates.nvim",
   },
   config = function()
     local cmp = require("cmp")
