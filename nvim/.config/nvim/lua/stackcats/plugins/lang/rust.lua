@@ -4,6 +4,33 @@ return {
   config = function()
     local custom = require("stackcats.plugins.utils.lsp")
 
+    local filename = vim.api.nvim_buf_get_name(0)
+
+    local cargo_root = vim.fs.find({ "Cargo.toml" }, {
+      upward = true,
+      path = vim.fs.dirname(filename),
+    })[1]
+
+    local rust_analyzer = {
+      notifications = {
+        cargoTomlNotFound = false,
+      },
+      diagnostics = {
+        disabled = { "unlinked-file" },
+      },
+      linkedProjects = {
+        filename,
+      },
+    }
+
+    if cargo_root then
+      rust_analyzer = {
+        cargo = {
+          allFeatures = true,
+        },
+      }
+    end
+
     vim.g.rustaceanvim = {
       server = {
         on_init = custom.on_init,
@@ -22,11 +49,7 @@ return {
         end,
         capabilities = custom.capabilities(),
         settings = {
-          ["rust-analyzer"] = {
-            notifications = {
-              cargoTomlNotFound = false,
-            },
-          },
+          ["rust-analyzer"] = rust_analyzer,
         },
       },
     }
