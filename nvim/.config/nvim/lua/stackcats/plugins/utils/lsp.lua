@@ -24,7 +24,6 @@ M.attach = function(_client, _bufnr)
   }
 
   keymap.set("n", "K", lsp_cmds.hover_doc, { buffer = true, desc = "LSP: Show documentation" })
-  keymap.set("n", "ga", lsp_cmds.code_action, { buffer = true, desc = "LSP: List LSP actions" })
   keymap.set("n", "gn", lsp_cmds.diagnostic_jump_next, { buffer = true, desc = "LSP: Jump next error" })
   keymap.set("n", "gp", lsp_cmds.diagnostic_jump_prev, { buffer = true, desc = "LSP: Jump prev error" })
   keymap.set("i", "<M-.>", lsp_cmds.goto_definition, { buffer = true, desc = "LSP: Goto definition" })

@@ -13,7 +13,6 @@ return {
       end,
     },
     "Nash0x7E2/awesome-flutter-snippets",
-    "nvim-telescope/telescope.nvim",
   },
   config = function()
     local custom = require("stackcats.plugins.utils.lsp")
@@ -21,15 +20,7 @@ return {
     require("flutter-tools").setup({
       lsp = {
         on_init = custom.on_init,
-        on_attach = function()
-          custom.attach()
-          vim.keymap.set(
-            "n",
-            "<Leader>sf",
-            require("telescope").extensions.flutter.commands,
-            { desc = "Telescope: Flutter Commands" }
-          )
-        end,
+        on_attach = custom.on_attach,
         capabilities = custom.capabilities(),
       },
       decorations = {

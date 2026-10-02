@@ -1,6 +1,6 @@
 -- evil lualine
 
-function setup(palette)
+local function setup(palette)
   -- Color table for highlights
   local colors = {
     bg = palette.bg0,
@@ -36,7 +36,7 @@ function setup(palette)
       -- Disable sections and component separators
       component_separators = "",
       section_separators = "",
-      theme = "tokyonight",
+      globalstatus = true,
     },
     sections = {
       -- these are to remove the defaults

@@ -18,6 +18,9 @@ return {
         -- nvim-lsp-endhints
         hl.LspInlayHint = { bg = "none", fg = c.comment }
       end,
+      on_colors = function(colors)
+        colors.bg_statusline = "none"
+      end,
     },
   },
 }

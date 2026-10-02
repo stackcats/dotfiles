@@ -66,8 +66,8 @@ return {
         options = {
           show_source = true,
           multilines = {
-            enabled = false,
-            always_show = false,
+            enabled = true,
+            always_show = true,
           },
         },
       })

@@ -5,6 +5,7 @@ return {
   opts = {
     picker = {
       hidden = true,
+      ui_select = true,
     },
     lazygit = {},
     terminal = {},
