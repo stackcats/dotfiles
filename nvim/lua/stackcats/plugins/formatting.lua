@@ -13,6 +13,7 @@ return {
       ocaml = { "ocamlformat" },
       python = { "isort", "black" },
       kotlin = { "ktfmt" },
+      nix = { "nixfmt" },
     }
 
     local formatters = {

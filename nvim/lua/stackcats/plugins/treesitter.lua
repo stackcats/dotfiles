@@ -28,6 +28,7 @@ return {
         "vimdoc",
         "query",
         "kotlin",
+        "nix"
       },
       highlight = {
         enable = true,
