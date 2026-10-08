@@ -48,6 +48,16 @@ return {
         cmd = { "kotlin-lsp", "--stdio" },
         single_file_support = true,
       },
+      nixd = {
+        cmd = { "nixd" },
+        settings = {
+          nixd = {
+            nixpkgs = {
+              expr = "import (builtins.getFlake(toString ./.)).inputs.nixpkgs { }",
+            },
+          },
+        },
+      },
     }
 
     local custom = require("stackcats.plugins.utils.lsp")

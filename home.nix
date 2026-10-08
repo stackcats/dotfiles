@@ -35,13 +35,18 @@
     ripgrep
     fd
     xdg-utils
+    tree-sitter
+
+    gcc
 
     # lang tools
     lua-language-server
     selene
     stylua
 
+    nixd
     nixfmt
+
     haskell-language-server
   ];
 
