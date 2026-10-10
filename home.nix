@@ -48,6 +48,10 @@
     nixfmt
 
     haskell-language-server
+
+    isort
+    black
+    mypy
   ];
 
   xdg.configFile = {
