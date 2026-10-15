@@ -27,7 +27,8 @@
       set-option -sa terminal-overrides ",xterm*:Tc"
       set -g set-clipboard on
       set-option -g pane-base-index 1
+      bind % split-window -h -c "#{pane_current_path}"
+      bind '"' split-window -v -c "#{pane_current_path}"
     '';
   };
 }
-
