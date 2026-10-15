@@ -9,6 +9,7 @@
   imports = [
     ./tmux.nix
     ./fish.nix
+    ./starship.nix
   ];
 
   home.username = "stackcats";
@@ -52,6 +53,13 @@
     isort
     black
     mypy
+
+    # scripts
+    (pkgs.writeShellApplication {
+      name = "shortpath";
+      runtimeInputs = [ pkgs.gawk ];
+      text = builtins.readFile ./scripts/shortpath.sh;
+    })
   ];
 
   xdg.configFile = {
@@ -61,6 +69,5 @@
 
   programs = {
     home-manager.enable = true;
-    starship.enable = true;
   };
 }
