@@ -11,16 +11,29 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux"; # 你的系统架构
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."stackcats" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
 
-        # 指定你的主配置文件
-        modules = [ ./home.nix ];
+      pkgsFor = nixpkgs.lib.genAttrs systems (system: import nixpkgs { inherit system; });
+    in
+    {
+      homeConfigurations = {
+        "stackcats@pc" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor.x86_64-linux;
+
+          modules = [ ./home.nix ];
+        };
+
+        "stackcats@pi" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsFor.aarch64-linux;
+
+          modules = [ ./home.nix ];
+        };
       };
     };
 }
